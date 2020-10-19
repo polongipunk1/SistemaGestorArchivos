@@ -21,7 +21,7 @@
       <h1>Sistema Gestor de Archivos</h1>
     </div>
 
-    <!-- Login Form prueba de commit1 -->
+    <!-- Login Form prueba bien commit -->
     <form>
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="username" required>
       <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" required>
