@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../librerias/bootstrap4/bootstrap.min.css">
     <link rel="stylesheet" href="../librerias/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../librerias/datatable/dataTables.bootstrap4.min.css">
     <title>Gestor</title>
     
 </head>
@@ -27,7 +28,7 @@
               </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><span class="far fa-folder"></span> Administrar</a>
+          <a class="nav-link" href="gestor.php"><span class="far fa-folder"></span> Administrar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><span class="fas fa-file"></span> Reportes</a>
