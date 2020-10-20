@@ -59,9 +59,7 @@
                         <a href="registro.php" class="btn btn-success mt-2 mb-2"><li class="fas fa-sign-in-alt"></li> Entrar</a>  
                         <button type="submit" value="Registrarse" class="btn btn-primary mt-2 mb-2">Registrarse</button>
                         </div>
-                    </div>
-                    </div>
-                    </div>                       
+                    </div>                                         
                 </form>
             </div>            
         </div>
