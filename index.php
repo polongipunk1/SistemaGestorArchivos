@@ -45,7 +45,7 @@
        if(respuesta == 1){
          window.location = "vistas/inicio.php";
        }else{
-         swal("Datos incorrectos","Verifique los datos ingresados","Error");
+         swal("Datos incorrectos","Verifique los datos ingresados","error");
        }
      }
    });

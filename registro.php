@@ -82,7 +82,7 @@
                 }else if(respuesta == 2){
                     swal("Este usuario ya existe, por favor ingrese otro")
                 }else{
-                    swal("Registro fallido", "Verifique los campos", "Error");
+                    swal("Registro fallido", "Verifique los campos", "error");
             }
             }
         });
