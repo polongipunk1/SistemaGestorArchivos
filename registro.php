@@ -56,7 +56,7 @@
                     <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese una contraseña" required>
                     <div class="form-group">
                         <div class="col-md-12 pt-3 text-center ">
-                        <a href="registro.php" class="btn btn-success mt-2 mb-2"><li class="fas fa-sign-in-alt"></li> Entrar</a>  
+                        <a href="index.php" class="btn btn-success mt-2 mb-2"><li class="fas fa-sign-in-alt"></li> Entrar</a>  
                         <button value="Registrarse" class="btn btn-primary mt-2 mb-2">Registrarse</button>
                         </div>
                     </div>                                         

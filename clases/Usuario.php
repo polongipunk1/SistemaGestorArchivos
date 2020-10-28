@@ -3,6 +3,7 @@
 require_once "Conexion.php";
 
  class Usuario extends Conectar {
+	 //Metodo para Registrar usuario
      public function agregarUsuario($datos) {
 		 $conexion = Conectar::conexion();
 
@@ -29,7 +30,7 @@ require_once "Conexion.php";
 		 }
 		 
 	 }
-	 
+	 //Metodo para Validar usuario repetido al registrarse
 	 public function buscarUsuarioRepetido($usuario){
 		$conexion = Conectar::conexion();
 
@@ -39,6 +40,29 @@ require_once "Conexion.php";
 		$datos = mysqli_fetch_array($result);
 
 		if($datos['usuario'] != "" || $datos['usuario'] == $usuario){
+			return 1;
+		}else{
+			return 0;
+		}
+	 }
+	 //Metodo para Iniciar sesion
+	 public function login($usuario, $password){
+		$conexion = Conectar::conexion();
+
+		$sql = "SELECT count(*) as existeUsuario FROM t_usuarios WHERE usuario = '$usuario' AND password = '$password'";
+		$result = mysqli_query($conexion, $sql);
+
+		$respuesta = mysqli_fetch_array($result)['existeUsuario'];
+
+		if($respuesta > 0){
+			$_SESSION['usuario'] = $usuario;
+			
+			$sql = "SELECT id_usuario FROM t_usuarios WHERE usuario = '$usuario' AND password = '$password'";
+			$result = mysqli_query($conexion, $sql);
+			$idUsuario = mysqli_fetch_row($result)[0];
+
+			$_SESSION['idUsuario'] = $idUsuario;
+
 			return 1;
 		}else{
 			return 0;

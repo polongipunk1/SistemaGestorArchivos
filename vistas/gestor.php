@@ -1,4 +1,12 @@
-<?php include "header.php"; ?>
+<?php 
+  
+  session_start();
+  if(isset($_SESSION['usuario'])){
+
+  
+  include "header.php";
+
+?>
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
@@ -14,3 +22,9 @@ $(document).ready(function(){
     $('#tablaGestorArchivos').load("gestor/tablaGestor.php");
 });
 </script>
+
+<?php
+  }else{
+    header("location:../index.php");
+  }
+?>
