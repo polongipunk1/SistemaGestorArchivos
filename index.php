@@ -23,8 +23,8 @@
 
     <!-- Login Form prueba bien commit -->
     <form method="POST" id="frmLogin" onsubmit="return login()">
-      <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="username" required>
-      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" required>
+      <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="Usuario" required>
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña" required>
       <a href="registro.php" class="btn btn-outline-danger mt-3 mb-2"><li class="fas fa-address-card"></li> Registrarse</a>
       <button type="submit" class="btn btn-success mt-3 mb-2"><li class="fas fa-sign-in-alt"></li> Entrar</button>    
     </form>
@@ -44,7 +44,7 @@
 
        if(respuesta == 1){
          window.location = "vistas/inicio.php";
-       }else{
+       }else{        
          swal("Datos incorrectos","Verifique los datos ingresados","error");
        }
      }
