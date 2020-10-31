@@ -22,7 +22,7 @@
     <title>Gestor</title>
     
 </head>
-<body>
+<body class="color-body">
     <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top bgnav">
   <div class="container">

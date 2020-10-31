@@ -36,12 +36,15 @@
             <td> <?php echo $mostrar['nombre'] ?> </td>
             <td> <?php echo $mostrar['fechaInsert'] ?></td>
             <td style="text-align: center;">
-              <span class="btn btn-warning btn-sm">
+              <span class="btn btn-warning btn-sm"
+                    data-toggle="modal" data-target="#modalActualizarCategoria"
+                    onclick="obtenerDatosCategoria('<?php echo $idCategoria ?>')">
                 <span class="fas fa-edit"></span>
               </span>
             </td>            
             <td style="text-align: center;">
-              <span class="btn btn-danger btn-sm">
+              <span class="btn btn-danger btn-sm" 
+                    onclick="eliminarCategoria('<?php echo $idCategoria ?>')">
                 <span class="fas fa-trash-alt"></span>
               </span>
             </td>
