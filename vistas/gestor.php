@@ -35,7 +35,7 @@
               <label for="">Categoría:</label>
               <div id="categoriasLoad"></div>
               <label for="">Selecciona archivos:</label>
-              <input type="file" name="archivos" id="archivos" class="form-control" multiple=""> 
+              <input type="file" name="archivos[]" id="archivos[]" class="form-control" multiple=""> 
           </form>
       </div>
       <div class="modal-footer">

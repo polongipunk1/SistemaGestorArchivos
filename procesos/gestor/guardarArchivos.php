@@ -21,13 +21,20 @@
 
             $nombreArchivo = $_FILES['archivos']['name'][$i];
             $explode = explode('.',$nombreArchivo);
-            $tipoArchivo = array_pop($explode);
-            
+            $tipoArchivo = array_pop($explode);            
             $rutaAlmacenamiento = $_FILES['archivos']['tmp_name'][$i];            
             $rutaFinal = $carpetaUsuario . "/" . $nombreArchivo;
 
-            echo move_uploaded_file($rutaAlmacenamiento,$rutaFinal);
+            $datosRegistroArchivo = array("idUsuario" => $idUsuario,
+                                          "idCategoria" => $idCategoria,
+                                          "nombreArchivo" => $nombreArchivo,
+                                          "tipo" => $tipoArchivo,
+                                          "ruta" => $rutaFinal);
+            if(move_uploaded_file($rutaAlmacenamiento,$rutaFinal)){
+                $respuesta = $Gestor->agregaRegistroArchivo($datosRegistroArchivo);
+            }                        
         }
+        echo $respuesta;
     }else{
         echo 0;
     }
