@@ -41,10 +41,10 @@
               </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="categorias.php"><span class="fas fa-layer-group"></span> Categorias</a>
+          <a class="nav-link" href="categorias.php"><span class="far fa-folder"></span> Categorias</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="gestor.php"><span class="far fa-folder"></span> Administrar</a>
+          <a class="nav-link" href="gestor.php"><span class="fas fa-file"></span> Archivos</a>
         </li>        
         <li class="nav-item">
           <a class="nav-link" href="../procesos/usuario/salir.php" style="color: red"><span class="fas fa-power-off"></span> Salir</a>
