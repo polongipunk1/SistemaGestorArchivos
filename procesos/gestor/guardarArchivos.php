@@ -7,7 +7,7 @@
     $idCategoria = $_POST['categoriasArchivos'];
     $idUsuario = $_SESSION['idUsuario'];
 
-    if($_FILES['archivos']['size'] > 0){
+    if($_FILES['archivos']['size'] > 0 && $idCategoria != ""){
 
         $carpetaUsuario = '../../archivos/'.$idUsuario;
 
@@ -35,7 +35,7 @@
             }                        
         }
         echo $respuesta;
-    }else{
+    }else{        
         echo 0;
     }
 
