@@ -29,7 +29,7 @@
             <tr>
               <th>Categoría</th>
               <th>Nombre</th>
-              <th>Tipo de archivo</th>
+              <th>Extensión de archivo</th>
               <th>Descargar</th>
               <th>Visualizar</th>
               <th>Eliminar</th>
@@ -38,7 +38,9 @@
           <tbody>
 
           <?php
-
+              /*Arreglo para las extensiones validas de los archivos*/
+              $extensionesValidas = array('png','PNG','jpg','JPG','pdf','PDF','mp3','MP3','m4a','mp4','MP4','mkv');
+              /*Mostrar los archivos en la tablaGestor*/
               while($mostrar = mysqli_fetch_array($result)){
               $rutaDescarga = "../archivos/".$idUsuario."/".$mostrar['nombreArchivo'];
               $nombreArchivo = $mostrar['nombreArchivo'];
@@ -55,7 +57,21 @@
                     <span class="fas fa-download"></span>
                 </a>
             </td>
-            <td></td>
+            <td>
+            <!-- Button trigger modal para VISUALIZAR ARCHIVOS-->
+                <?php
+                    for($i=0; $i < count($extensionesValidas); $i++){
+                      if($extensionesValidas[$i] == $mostrar['tipoArchivo']){
+                ?>
+                    <span class="btn btn-primary btn-sm" data-toggle="modal" data-target="#visualizarArchivo"
+                      onclick="obtenerArchivoPorId('<?php echo $idArchivo ?>')">
+                        <span class="fas fa-eye"></span>
+                    </span>
+                <?php
+                      }
+                    }
+                ?>
+            </td>
             <td>
               <span class="btn btn-danger btn-sm" onclick="eliminarArchivo('<?php echo $idArchivo ?>')">
                 <span class="fas fa-trash-alt"></span>

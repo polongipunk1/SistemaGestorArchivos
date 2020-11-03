@@ -10,7 +10,7 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Gestor de Archivos</h1>
-    <!-- Button trigger modal -->
+    <!-- Button trigger modal AGREGAR ARCHIVOS -->
         <span class="btn btn-success" data-toggle="modal" data-target="#modalAgregarArchivos">
             <span class="fas fa-plus-circle"></span>Agregar archivos
         </span>
@@ -41,6 +41,26 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-primary" id="btnGuardarArchivos">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para VISUALIZAR LOS ARCHIVOS-->
+<div class="modal fade" id="visualizarArchivo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Vista previa</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div id="archivoObtenido"></div>        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>        
       </div>
     </div>
   </div>

@@ -55,3 +55,14 @@ function eliminarArchivo(idArchivo){
         }
       });
 }
+
+function obtenerArchivoPorId(idArchivo){
+    $.ajax({
+        type:"POST",
+        data:"idArchivo=" + idArchivo, 
+        url:"../procesos/gestor/obtenerArchivo.php",
+        success:function(respuesta){
+            $('#archivoObtenido').html(respuesta);
+        }
+    });    
+}
