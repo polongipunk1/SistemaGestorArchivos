@@ -30,3 +30,7 @@
 .color-body{
   background-color: #e9ecef;
 }
+
+.sh-usr{
+  box-shadow: 0px 4px 3px rgba(26, 103, 148, 0.8);
+}

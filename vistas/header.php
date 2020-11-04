@@ -29,7 +29,7 @@
     <a class="navbar-brand" href="inicio.php">
           <img src="../img/logo.png" alt="" width="50px">          
         </a>
-        <button class="btn btn-sm btn-outline-success">Hola <?php echo utf8_decode($row['nombre']); ?> </button>
+        <h5 class="text-info sh-usr">Hola <?php echo utf8_decode($row['nombre']); ?> </h5>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,7 +41,7 @@
               </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="categorias.php"><span class="far fa-folder"></span> Categorias</a>
+          <a class="nav-link" href="categorias.php"><span class="far fa-folder"></span> Categorías</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="gestor.php"><span class="fas fa-file"></span> Archivos</a>
