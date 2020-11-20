@@ -13,7 +13,7 @@ if(isset($_SESSION['usuario'])){
             <!-- Button trigger modal -->
                 <div class="col-sm-4">
                     <span class="btn btn-success" data-toggle="modal" data-target="#modalAgregaCategoria">
-                        <span class="fas fa-plus-circle"></span> Agregar nueva categoría
+                        <span class="fas fa-folder-plus mr-2"></span>Agregar nueva categoría
                     </span>
                 </div>
             </div>
@@ -40,7 +40,7 @@ if(isset($_SESSION['usuario'])){
       </div>
       <div class="modal-body">
         <form action="" id="frmCategorias">
-            <label for="">Nombre de la categoría:</label>
+            <label for="nombreCategoria">Nombre de la categoría:</label>
             <input type="text" name="nombreCategoria" id="nombreCategoria" class="form-control">
         </form>
     </div>

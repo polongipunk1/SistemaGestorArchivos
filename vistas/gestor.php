@@ -12,7 +12,7 @@
     <h1 class="display-4">Gestor de Archivos</h1>
     <!-- Button trigger modal AGREGAR ARCHIVOS -->
         <span class="btn btn-success" data-toggle="modal" data-target="#modalAgregarArchivos">
-            <span class="fas fa-plus-circle"></span>Agregar archivos
+            <span class="fas fa-plus-circle mr-2"></span>Agregar archivos
         </span>
     <hr>
     <div id="tablaGestorArchivos"></div>
@@ -31,7 +31,7 @@
         </button>
       </div>
       <div class="modal-body">
-          <form action="" id="frmArchivos"enctype="multipart/form-data" method="post">
+          <form action="" id="frmArchivos" enctype="multipart/form-data" method="post">
               <label for="">Categoría:</label>
               <div id="categoriasLoad"></div>
               <label for="">Selecciona archivos:</label>

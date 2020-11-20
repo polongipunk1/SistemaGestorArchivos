@@ -17,7 +17,8 @@ function agregarArchivosGestor(){
                 $('#tablaGestorArchivos').load("gestor/tablaGestor.php");
                 swal("Archivo agregado con éxito","El archivo se ha subido satisfactoriamente","success");
             }else{
-                swal("Error al agregar archivo","Hubo un error en la subida del archivo","error");
+                swal("Error al agregar archivo",
+                "Debe tener una Categoría en donde guardar el archivo","error");
             }
         }
         });

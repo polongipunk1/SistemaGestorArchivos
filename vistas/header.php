@@ -18,13 +18,13 @@
     <link rel="stylesheet" href="../librerias/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
     <link rel="stylesheet" href="../librerias/datatable/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">    
     <title>Gestor</title>
     
 </head>
 <body class="color-body">
     <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top bgnav">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top bgnav sticky-top">
   <div class="container">
     <a class="navbar-brand" href="inicio.php">
           <img src="../img/logo.png" alt="" width="50px">          
@@ -36,18 +36,21 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto layout">
         <li class="nav-item active">
-          <a class="nav-link" href="inicio.php"><span class="fas fa-home"></span> Inicio
+          <a class="nav-link" href="inicio.php"><span class="fas fa-home mr-1"></span>Inicio
                 <span class="sr-only">(current)</span>
               </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="categorias.php"><span class="far fa-folder"></span> Categorías</a>
+          <a class="nav-link" href="categorias.php"><span class="far fa-folder mr-1"></span>Categorías</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="gestor.php"><span class="fas fa-file"></span> Archivos</a>
-        </li>        
+          <a class="nav-link" href="gestor.php"><span class="fas fa-file mr-1"></span>Archivos</a>
+        </li>
         <li class="nav-item">
-          <a class="nav-link" href="../procesos/usuario/salir.php" style="color: red"><span class="fas fa-power-off"></span> Salir</a>
+          <a class="nav-link" href="formatoProyecto.php"><span class="fas fa-file-alt mr-1"></span>Proyectos</a>
+        </li>          
+        <li class="nav-item">
+          <a class="nav-link text-danger" href="../procesos/usuario/salir.php" style="font-weight: bold;"><strong><span class="icono fas fa-power-off text-danger mr-1"></span>Salir</strong></a>
         </li>
       </ul>
     </div>
