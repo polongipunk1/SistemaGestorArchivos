@@ -34,3 +34,24 @@
 .sh-usr{
   box-shadow: 0px 4px 3px rgba(26, 103, 148, 0.8);
 }
+
+#body-login{
+  background-image: url("../img/teshEdificio.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+}
+
+#body-login:before {
+	content:'';
+	position: absolute;
+  top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.sombraSGA{
+  text-shadow: rgb(51, 47, 47) 0.1em 0.1em 0.2em;
+}

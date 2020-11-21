@@ -39,7 +39,7 @@
 
           <?php
               /*Arreglo para las extensiones validas de los archivos*/
-              $extensionesValidas = array('png','PNG','jpg','JPG','pdf','PDF','mp3','MP3','m4a','mp4','MP4','mkv');
+              $extensionesValidas = array('png','PNG','jpg','JPG','jpeg','JPEG','pdf','PDF','mp3','MP3','m4a','mp4','MP4','mkv');
               /*Mostrar los archivos en la tablaGestor*/
               while($mostrar = mysqli_fetch_array($result)){
               $rutaDescarga = "../archivos/".$idUsuario."/".$mostrar['nombreArchivo'];

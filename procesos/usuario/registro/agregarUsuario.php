@@ -6,8 +6,7 @@
  $datos = array (
         "nombre" => $_POST['nombre'],
         "apellidos" => $_POST['apellidos'],
-        "carrera" => $_POST['carrera'],
-        "semestre" => $_POST['semestre'],
+        "carrera" => $_POST['carrera'],        
         "email" => $_POST['email'],
         "no_empleado" => $_POST['no_empleado'],
         "telefono" => $_POST['telefono'],

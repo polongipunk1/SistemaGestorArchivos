@@ -55,7 +55,7 @@
             
             if($extension == 'png' || $extension == 'PNG'){
                 return '<img src="'.$ruta.'" width="100%">';
-            }else if($extension == 'jpg' || $extension == 'JPG'){
+            }else if($extension == 'jpg' || $extension == 'JPG' || $extension == 'jpeg' || $extension == 'JPEG'){
                 return '<img src="'.$ruta.'" width="100%">';                
             }else if($extension == 'pdf' || $extension == 'PDF'){
                 return '<embed src="'.$ruta.'#toolbar=0&navpanes=0&scrollbar=0" 

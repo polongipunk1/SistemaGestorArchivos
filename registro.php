@@ -30,23 +30,7 @@
                     <option value="Licenciatura en Administración">Licenciatura en Administración</option>
                     <option value="Ingeniería Mecatrónica">Ingeniería Mecatrónica</option>
                     <option value="Gastronomía">Gastronomía</option>
-                    </select>
-                    <label for="semestre" class="font-weight-bold">Semestre:</label>
-                    <select name="semestre" id="semestre" class="form-control">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    </select>
+                    </select>                    
                     <label for="email" class="font-weight-bold">Correo electrónico:</label>
                     <input type="email" name="email" id="email" class="form-control" placeholder="Ingrese un correo electrónico" required>
                     <label for="no_empleado" class="font-weight-bold">No. de empleado:</label>

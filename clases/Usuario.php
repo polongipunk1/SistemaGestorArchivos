@@ -10,14 +10,13 @@ require_once "Conexion.php";
 		 if(self::buscarUsuarioRepetido($datos['usuario'])){
 			 return 2;
 		 }else{
-			$sql = "INSERT INTO t_usuarios (nombre, apellidos, carrera, semestre, email, no_empleado, telefono, usuario, password)
-			VALUES (?,?,?,?,?,?,?,?,?)";
+			$sql = "INSERT INTO t_usuarios (nombre, apellidos, carrera, email, no_empleado, telefono, usuario, password)
+			VALUES (?,?,?,?,?,?,?,?)";
 
             $query = $conexion->prepare($sql);
-            $query->bind_param('sssisssss', $datos['nombre'],
+            $query->bind_param('ssssssss', $datos['nombre'],
 					   $datos['apellidos'],
-					   $datos['carrera'],
-					   $datos['semestre'],
+					   $datos['carrera'],					   
 					   $datos['email'],
 					   $datos['no_empleado'],
 					   $datos['telefono'],
