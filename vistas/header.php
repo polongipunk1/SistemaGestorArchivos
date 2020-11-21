@@ -18,7 +18,9 @@
     <link rel="stylesheet" href="../librerias/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
     <link rel="stylesheet" href="../librerias/datatable/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="../css/estilos.css">    
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../librerias/jquery-ui-1.12.1/jquery-ui.theme.css">
+    <link rel="stylesheet" href="../librerias/jquery-ui-1.12.1/jquery-ui.css">
     <title>Gestor</title>
     
 </head>
@@ -47,7 +49,7 @@
           <a class="nav-link" href="gestor.php"><span class="fas fa-file mr-1"></span>Archivos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="formatoProyecto.php"><span class="fas fa-file-alt mr-1"></span>Proyectos</a>
+          <a class="nav-link" href="proyectos.php"><span class="fas fa-file-alt mr-1"></span>Proyectos</a>
         </li>          
         <li class="nav-item">
           <a class="nav-link text-danger" href="../procesos/usuario/salir.php" style="font-weight: bold;"><strong><span class="icono fas fa-power-off text-danger mr-1"></span>Salir</strong></a>

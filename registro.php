@@ -43,6 +43,9 @@
                     <option value="8">8</option>
                     <option value="9">9</option>
                     <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
                     </select>
                     <label for="email" class="font-weight-bold">Correo electrónico:</label>
                     <input type="email" name="email" id="email" class="form-control" placeholder="Ingrese un correo electrónico" required>

@@ -29,27 +29,27 @@ if(isset($_SESSION['usuario'])){
     </div>            
 
   <!-- Modal para AGREGAR NUEVA CATEGORIA-->
-  <div class="modal fade" id="modalAgregaCategoria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Agregar nueva categoría</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
-      <div class="modal-body">
-        <form action="" id="frmCategorias">
-            <label for="nombreCategoria">Nombre de la categoría:</label>
-            <input type="text" name="nombreCategoria" id="nombreCategoria" class="form-control">
-        </form>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" id="btnGuardarCategoria">Guardar</button>
-    </div>
-</div>
-</div>
+<div class="modal fade" id="modalAgregaCategoria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Agregar nueva categoría</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form action="" id="frmCategorias">
+					<label for="nombreCategoria">Nombre de la categoría:</label>
+					<input type="text" name="nombreCategoria" id="nombreCategoria" class="form-control">
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				<button type="button" class="btn btn-primary" id="btnGuardarCategoria">Guardar</button>
+			</div>
+		</div>
+	</div>
 </div>
 
 
