@@ -9,7 +9,7 @@ function agregarArchivosGestor(){
         contentType: false,
         processData: false,
         success:function(respuesta){
-            console.log(respuesta);
+            //console.log(respuesta);
             respuesta = respuesta.trim();
 
             if(respuesta == 1){
