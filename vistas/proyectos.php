@@ -201,10 +201,9 @@ if(isset($_SESSION['usuario'])){
                         </select>
 					</div>
                     <div class="form-group col-md-6">
-                        <label for="" class="text-info" style="font-weight: bold;">
-                        <b class="text-danger mr-1">*</b>Categoría disponible para guardar el proyecto:</label>                        
-                        <div id="categoriasLoadU"></div>
-                        <input id="nombreCategoria" class="form-control mb-1 text-center" readonly>                  
+                        <label for="" class="alert-warning" style="font-weight: bold;" id="categoriasArchivosU">
+                        <b class="text-danger mr-1">*</b>Categoría del proyecto:</label>                        
+                        <input id="nombreCategoria" class="form-control mb-1" readonly>                  
                     </div>
                     <div class="form-group col-md-2">
                         <label for="semestreU"><b class="text-danger mr-1">*</b>Semestre:</label>
@@ -370,7 +369,7 @@ function agregarProyecto(){
             changeMonth: true,
             changeYear: true,
             yearRange: '2020:' + yyyy,
-            dateFormat: "dd-mm-yy"
+            dateFormat: "yy-mm-dd"
         });
 
         $("#fechaTermino").datepicker({
@@ -384,7 +383,7 @@ function agregarProyecto(){
             changeMonth: true,
             changeYear: true,
             yearRange: '2020:' + yyyy,
-            dateFormat: "dd-mm-yy"
+            dateFormat: "yy-mm-dd"
         });
     });
     

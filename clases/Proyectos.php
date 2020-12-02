@@ -83,7 +83,6 @@ require_once "Conexion.php";
         $conexion = Conectar::conexion();
 
         $sql = "UPDATE t_proyectos SET                        
-                        id_categoria = ?,
                         nomResidente = ?,
                         emailResidente = ?,
                         matricula = ?,
@@ -104,8 +103,7 @@ require_once "Conexion.php";
                         WHERE id_proyecto = ?";
 
         $query = $conexion->prepare($sql);
-        $query->bind_param("issssissssssssssssi",                            
-                            $datos['idCategoria'],
+        $query->bind_param("ssssissssssssssssi",                                                        
                             $datos['nomResidenteU'],
                             $datos['emailResidenteU'],
                             $datos['matriculaU'],        

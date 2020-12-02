@@ -4,16 +4,15 @@ function obtenerDatosProyecto(idProyecto){
         data:"idProyecto=" + idProyecto,
         url:"../procesos/proyectos/obtenerProyecto.php",
         success:function(respuesta){
-            respuesta = jQuery.parseJSON(respuesta);
-            
-            console.log(respuesta);
+            respuesta = jQuery.parseJSON(respuesta);        
+            //console.log(respuesta);
 
             $('#idProyecto').val(respuesta['idProyecto']);
             $('#nomResidenteU').val(respuesta['nomResidente']);
             $('#emailResidenteU').val(respuesta['emailResidente']);
             $('#matriculaU').val(respuesta['matricula']);            
             $('#carreraU').val(respuesta['carrera']);
-            $('#nombreCategoria').val("Categoría actual: " + respuesta['categoria']);
+            $('#nombreCategoria').val(respuesta['categoria']);
             $('#semestreU').val(respuesta['semestre']);
             $('#fechaInicioU').val(respuesta['fechaInicio']);
             $('#fechaTerminoU').val(respuesta['fechaTermino']);
