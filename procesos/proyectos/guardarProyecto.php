@@ -33,13 +33,8 @@
         "direccion" => $_POST['direccion'],
         "emailEmpresa" => $_POST['emailEmpresa']        
         );
-       
-       if($idCategoria != ""){
-           $proyectos = new Proyectos();
-           echo $proyectos->agregarProyecto($datos);
-       }
-       echo 0;
-       
-       
+              
+        $proyectos = new Proyectos();
+        echo $proyectos->agregarProyecto($datos);            
        
 ?>

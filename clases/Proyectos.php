@@ -44,32 +44,20 @@ require_once "Conexion.php";
     public function obtenerProyecto($idProyecto){
         $conexion = Conectar::conexion();        
 
-        $sql = "SELECT id_proyecto,                
-                id_categoria,
-                nomResidente,
-                emailResidente,
-                matricula,
-                carrera,
-                semestre,
-                fechaInicio,
-                fechaTermino,
-                nomProyecto,
-                responsable,
-                caracteristicas,
-                objetivo,
-                justificacion,
-                descripcion,
-                nomEmpresa,
-                telefono,
-                direccion,
-                emailEmpresa FROM t_proyectos WHERE id_proyecto = '$idProyecto'";
+        $sql = "SELECT 
+        categorias.nombre AS categoria, proyectos.*
+        FROM
+        t_proyectos AS proyectos
+            INNER JOIN
+        t_categorias AS categorias ON proyectos.id_categoria = categorias.id_categoria
+            AND proyectos.id_proyecto = '$idProyecto'";        
 
-        $result = mysqli_query($conexion, $sql);
-        
+        $result = mysqli_query($conexion, $sql);        
         $proyecto = mysqli_fetch_array($result);
 
         $datos = array("idProyecto" => $proyecto['id_proyecto'],
                         "idCategoria" => $proyecto['id_categoria'],
+                        "categoria" => $proyecto['categoria'],
                         "nomResidente" => $proyecto['nomResidente'],
                         "emailResidente" => $proyecto['emailResidente'],
                         "matricula" => $proyecto['matricula'],
@@ -89,6 +77,57 @@ require_once "Conexion.php";
                         "emailEmpresa" => $proyecto['emailEmpresa']);
         
         return $datos;
+    }
+
+    public function actualizarProyectos($datos){
+        $conexion = Conectar::conexion();
+
+        $sql = "UPDATE t_proyectos SET                        
+                        id_categoria = ?,
+                        nomResidente = ?,
+                        emailResidente = ?,
+                        matricula = ?,
+                        carrera = ?,
+                        semestre = ?,
+                        fechaInicio = ?,
+                        fechaTermino = ?,
+                        nomProyecto = ?,
+                        responsable = ?,
+                        caracteristicas = ?,
+                        objetivo = ?,
+                        justificacion = ?,
+                        descripcion = ?,
+                        nomEmpresa = ?,
+                        telefono = ?,
+                        direccion = ?,
+                        emailEmpresa = ?
+                        WHERE id_proyecto = ?";
+
+        $query = $conexion->prepare($sql);
+        $query->bind_param("issssissssssssssssi",                            
+                            $datos['idCategoria'],
+                            $datos['nomResidenteU'],
+                            $datos['emailResidenteU'],
+                            $datos['matriculaU'],        
+                            $datos['carreraU'],
+                            $datos['semestreU'],
+                            $datos['fechaInicioU'],
+                            $datos['fechaTerminoU'],
+                            $datos['nomProyectoU'],
+                            $datos['responsableU'],
+                            $datos['caracteristicasU'],
+                            $datos['objetivoU'],
+                            $datos['justificacionU'],
+                            $datos['descripcionU'],
+                            $datos['nomEmpresaU'],
+                            $datos['telefonoU'],
+                            $datos['direccionU'],
+                            $datos['emailEmpresaU'],
+                            $datos['idProyecto']);
+        
+        $respuesta = $query->execute();
+        $query->close();
+        return $respuesta;
     }
  }
 

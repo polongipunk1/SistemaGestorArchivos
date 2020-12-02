@@ -70,7 +70,7 @@ if(isset($_SESSION['usuario'])){
                     <div class="form-group col-md-6">
                         <label for="" class="text-info" style="font-weight: bold;">
                         <b class="text-danger mr-1">*</b>Categoría disponible para guardar el proyecto:</label>
-                        <div id="categoriasLoad"></div>                    
+                        <div id="categoriasLoad"></div>                                           
                     </div>
                     <div class="form-group col-md-2">
                         <label for="semestre"><b class="text-danger mr-1">*</b>Semestre:</label>
@@ -169,7 +169,8 @@ if(isset($_SESSION['usuario'])){
 				</button>
 			</div>
 			<div class="modal-body">
-				<form id="frmActualizarProyecto">
+				<form id="frmActualizarProyecto" method="POST" onsubmit="return actualizaProyecto()">
+                <input type="text" id="idProyecto" name="idProyecto" hidden>                
                 <h5 class="text-center">Datos del residente</h5>                
                 <div class="form-row">                    
                     <div class="form-group col-md-5">
@@ -201,8 +202,9 @@ if(isset($_SESSION['usuario'])){
 					</div>
                     <div class="form-group col-md-6">
                         <label for="" class="text-info" style="font-weight: bold;">
-                        <b class="text-danger mr-1">*</b>Categoría disponible para guardar el proyecto:</label>
-                        <div id="categoriasLoadU"></div>                    
+                        <b class="text-danger mr-1">*</b>Categoría disponible para guardar el proyecto:</label>                        
+                        <div id="categoriasLoadU"></div>
+                        <input id="nombreCategoria" class="form-control mb-1 text-center" readonly>                  
                     </div>
                     <div class="form-group col-md-2">
                         <label for="semestreU"><b class="text-danger mr-1">*</b>Semestre:</label>
@@ -297,19 +299,13 @@ include "footer.php";
 <!--Dependencias de PROYECTOS, todas la funciones JS de PROYECTOS-->
 <script src="../js/proyectos.js"></script>
 <script type="text/javascript">
+
 /*Funcion para agregar proyecto*/
 function agregarProyecto(){
-    var formProyecto = document.getElementById('frmProyectos');
-    var datosProyecto = new FormData(formProyecto);
-
-    $.ajax({
-        url: "../procesos/proyectos/guardarProyecto.php",
-        type:"POST",
-        datatype: "html",
-        data: datosProyecto,
-        cache: false,
-        contentType: false,
-        processData: false,
+    $.ajax({        
+        method:"POST",        
+        data: $('#frmProyectos').serialize(),
+        url: "../procesos/proyectos/guardarProyecto.php",      
         success:function(respuesta){
             console.log(respuesta);
             respuesta = respuesta.trim();
@@ -317,11 +313,7 @@ function agregarProyecto(){
             if(respuesta == 1){
                 $('#frmProyectos')[0].reset();
                 $('#tablaProyectos').load("proyectos/tablaProyectos.php");
-                swal("Proyecto guardado con éxito!!", "El proyecto se ha guardado satisfactoriamente", "success");
-            }else if(respuesta == 10){
-                $('#frmProyectos')[0].reset();
-                $('#tablaProyectos').load("proyectos/tablaProyectos.php");
-                swal("Proyecto guardado con éxito!!", "El proyecto se ha guardado satisfactoriamente", "success");
+                swal("Proyecto guardado con éxito!!", "El proyecto se ha guardado satisfactoriamente", "success");            
             }else{
                 swal("Error al guardar el proyecto", "Debe llenar todos los campos", "error");
             }
@@ -330,19 +322,31 @@ function agregarProyecto(){
         return false;
     }
 
-    /*Script para la funcionalidad de la interfaz*/
+    /*Funcion para editar proyecto*/
+    function actualizaProyecto(){
+        $.ajax({
+        method:"POST",
+        data:$('#frmActualizarProyecto').serialize(),
+        url:"../procesos/proyectos/actualizaProyecto.php",
+        success:function(respuesta){
+            respuesta = respuesta.trim();
+            console.log(respuesta);
+            if(respuesta == 1){                
+                $('#tablaProyectos').load("proyectos/tablaProyectos.php");
+                swal("Proyecto actualizado con éxito!!", "El proyecto se actualizo correctamente", "success"); 
+            }else{
+                swal("Error al actualizar proyecto", "Debe llenar todos los campos", "error");
+            }
+        }
+    });
+        return false;
+    }
+
+    /*Script para la carga de las tablas y el select de categorias*/
     $(document).ready(function(){              
         $('#tablaProyectos').load("proyectos/tablaProyectos.php");
         $('#categoriasLoad').load("categorias/selectCategorias.php");        
         $('#categoriasLoadU').load("categorias/selectCategoriasU.php");        
-
-        /*$('#btnGuardarProyecto').click(function(){
-            agregarProyecto();
-        });*/
-
-        $('#btnActualizaInfoProyecto').click(function(){
-            actualizaProyecto();
-        });
     });
 
     /*script para el readonly de los campos de fecha (no ingresar datos)*/

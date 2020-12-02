@@ -10,7 +10,7 @@
     $result = mysqli_query($conexion, $sql);
 ?>
 
-<select name="categoriasArchivos" id="categoriasArchivos" class="form-control">
+<select name="categoriasArchivos" id="categoriasArchivos" class="form-control" required>
     <?php
         while($mostrar = mysqli_fetch_array($result)){
             $idCategoria = $mostrar['id_categoria'];

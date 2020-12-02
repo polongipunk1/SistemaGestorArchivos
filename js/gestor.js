@@ -18,7 +18,7 @@ function agregarArchivosGestor(){
                 swal("Archivo agregado con éxito","El archivo se ha subido satisfactoriamente","success");
             }else{
                 swal("Error al agregar archivo",
-                "Debe tener una Categoría en donde guardar el archivo","error");
+                "Ambos campos no deben ser nulos","error");
             }
         }
         });

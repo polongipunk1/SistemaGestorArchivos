@@ -8,11 +8,12 @@ function obtenerDatosProyecto(idProyecto){
             
             console.log(respuesta);
 
+            $('#idProyecto').val(respuesta['idProyecto']);
             $('#nomResidenteU').val(respuesta['nomResidente']);
             $('#emailResidenteU').val(respuesta['emailResidente']);
             $('#matriculaU').val(respuesta['matricula']);            
             $('#carreraU').val(respuesta['carrera']);
-            $('#categoriasLoadU').val(respuesta['categoria']);
+            $('#nombreCategoria').val("Categoría actual: " + respuesta['categoria']);
             $('#semestreU').val(respuesta['semestre']);
             $('#fechaInicioU').val(respuesta['fechaInicio']);
             $('#fechaTerminoU').val(respuesta['fechaTermino']);
@@ -26,13 +27,30 @@ function obtenerDatosProyecto(idProyecto){
             $('#telefonoU').val(respuesta['telefono']);
             $('#direccionU').val(respuesta['direccion']);
             $('#emailEmpresaU').val(respuesta['emailEmpresa']);            
+                        
         }
     });
 }
 
+/*function actualizaProyecto(){
+    $.ajax({
+        type:"POST",
+        data:$('#frmActualizarProyecto').serialize(),
+        url:"../procesos/proyectos/actualizaProyecto.php",
+        success:function(respuesta){
+            respuesta = respuesta.trim();
+            console.log(respuesta);
+            if(respuesta == 1){
+                //$('#tablaProyectos').load("proyectos/tablaProyectos.php");
+                swal("Proyecto actualizado con éxito!!", "El proyecto se actualizo correctamente", "success"); 
+            }else{
+                swal("Error al actualizar proyecto", "Debe llenar todos los campos", "error");
+            }
+        }
+    })   
+}
 
-
-/*function agregarProyecto(){
+function agregarProyecto(){
     var formProyecto = document.getElementById('frmProyectos');
     var datosProyecto = new FormData(formProyecto);
 
