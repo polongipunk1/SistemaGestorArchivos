@@ -1,34 +1,33 @@
-function obtenerDatosProyecto(idProyecto){
-    $.ajax({
-        type:"POST",
-        data:"idProyecto=" + idProyecto,
-        url:"../procesos/proyectos/obtenerProyecto.php",
-        success:function(respuesta){
-            respuesta = jQuery.parseJSON(respuesta);        
-            //console.log(respuesta);
+function obtenerDatosProyecto(idProyecto) {
+  $.ajax({
+    type: "POST",
+    data: "idProyecto=" + idProyecto,
+    url: "../procesos/proyectos/obtenerProyecto.php",
+    success: function (respuesta) {
+      respuesta = jQuery.parseJSON(respuesta);
+      //console.log(respuesta);
 
-            $('#idProyecto').val(respuesta['idProyecto']);
-            $('#nomResidenteU').val(respuesta['nomResidente']);
-            $('#emailResidenteU').val(respuesta['emailResidente']);
-            $('#matriculaU').val(respuesta['matricula']);            
-            $('#carreraU').val(respuesta['carrera']);
-            $('#nombreCategoria').val(respuesta['categoria']);
-            $('#semestreU').val(respuesta['semestre']);
-            $('#fechaInicioU').val(respuesta['fechaInicio']);
-            $('#fechaTerminoU').val(respuesta['fechaTermino']);
-            $('#nomProyectoU').val(respuesta['nomProyecto']);
-            $('#responsableU').val(respuesta['responsable']);
-            $('#caracteristicasU').val(respuesta['caracteristicas']);
-            $('#objetivoU').val(respuesta['objetivo']);
-            $('#justificacionU').val(respuesta['justificacion']);
-            $('#descripcionU').val(respuesta['descripcion']);
-            $('#nomEmpresaU').val(respuesta['nomEmpresa']);
-            $('#telefonoU').val(respuesta['telefono']);
-            $('#direccionU').val(respuesta['direccion']);
-            $('#emailEmpresaU').val(respuesta['emailEmpresa']);            
-                        
-        }
-    });
+      $("#idProyecto").val(respuesta["idProyecto"]);
+      $("#nomResidenteU").val(respuesta["nomResidente"]);
+      $("#emailResidenteU").val(respuesta["emailResidente"]);
+      $("#matriculaU").val(respuesta["matricula"]);
+      $("#carreraU").val(respuesta["carrera"]);
+      $("#nombreCategoria").val(respuesta["categoria"]);
+      $("#semestreU").val(respuesta["semestre"]);
+      $("#fechaInicioU").val(respuesta["fechaInicio"]);
+      $("#fechaTerminoU").val(respuesta["fechaTermino"]);
+      $("#nomProyectoU").val(respuesta["nomProyecto"]);
+      $("#responsableU").val(respuesta["responsable"]);
+      $("#caracteristicasU").val(respuesta["caracteristicas"]);
+      $("#objetivoU").val(respuesta["objetivo"]);
+      $("#justificacionU").val(respuesta["justificacion"]);
+      $("#descripcionU").val(respuesta["descripcion"]);
+      $("#nomEmpresaU").val(respuesta["nomEmpresa"]);
+      $("#telefonoU").val(respuesta["telefono"]);
+      $("#direccionU").val(respuesta["direccion"]);
+      $("#emailEmpresaU").val(respuesta["emailEmpresa"]);
+    },
+  });
 }
 
 /*function actualizaProyecto(){

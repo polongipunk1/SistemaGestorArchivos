@@ -7,4 +7,4 @@
 
     echo $Gestor->obtenerRutaArchivo($idArchivo);
 
-?>   
+?>
