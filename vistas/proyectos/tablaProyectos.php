@@ -65,7 +65,9 @@
                         </td>
                         <td>
                             <span class="btn btn-danger btn-sm">
-                                <span class="icono far fa-file-pdf" style="font-size: 20px;"></span>
+                                <a href="../librerias/dompdf/crearPdf.php?id=<?php echo $idProyecto ?>"><span
+                                        class="icono far fa-file-pdf text-white"
+                                        style="font-size: 20px; text-decoration: none;"></span></a>
                             </span>
                         </td>
                     </tr>
