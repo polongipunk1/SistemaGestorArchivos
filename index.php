@@ -15,7 +15,7 @@
 
 <body id="body-login">
     <div class="wrapper fadeInDown">
-        <div id="formContent" style="background-color: #296b94;">
+        <div id="formContent" style="background-color: #296b94; opacity: 0.92;">
             <!-- Tabs Titles #2f7299 #2e607d;-->
 
             <!-- Icon -->

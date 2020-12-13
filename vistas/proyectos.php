@@ -116,13 +116,13 @@ if(isset($_SESSION['usuario'])){
                     </div>
                     <div class="form-group">
                         <label for="objetivo"><b class="text-danger mr-1">*</b>Objetivo:</label>
-                        <input type="text" class="form-control" name="objetivo" id="objetivo"
-                            placeholder="Ingrese el objetivo del proyecto" required>
+                        <textarea type="text" class="form-control" name="objetivo" id="objetivo" rows="1"
+                            placeholder="Ingrese el objetivo del proyecto" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="justificacion"><b class="text-danger mr-1">*</b>Justificación:</label>
-                        <input type="text" class="form-control" name="justificacion" id="justificacion"
-                            placeholder="Ingrese la justificación del proyecto" required>
+                        <textarea type="text" class="form-control" name="justificacion" id="justificacion" rows="1"
+                            placeholder="Ingrese la justificación del proyecto" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="descripcion"><b class="text-danger mr-1">*</b>Descripción del proyecto:</label>
@@ -256,13 +256,13 @@ if(isset($_SESSION['usuario'])){
                     </div>
                     <div class="form-group">
                         <label for="objetivoU"><b class="text-danger mr-1">*</b>Objetivo:</label>
-                        <input type="text" class="form-control" name="objetivoU" id="objetivoU"
-                            placeholder="Ingrese el objetivo del proyecto" required>
+                        <textarea type="text" class="form-control" name="objetivoU" id="objetivoU" rows="1"
+                            placeholder="Ingrese el objetivo del proyecto" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="justificacionU"><b class="text-danger mr-1">*</b>Justificación:</label>
-                        <input type="text" class="form-control" name="justificacionU" id="justificacionU"
-                            placeholder="Ingrese la justificación del proyecto" required>
+                        <textarea type="text" class="form-control" name="justificacionU" id="justificacionU" rows="1"
+                            placeholder="Ingrese la justificación del proyecto" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="descripcionU"><b class="text-danger mr-1">*</b>Descripción del proyecto:</label>

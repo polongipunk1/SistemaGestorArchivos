@@ -1,6 +1,6 @@
 .avatar {
   width: 100px;
-  box-shadow: 0px 0px 6px #848484;
+  box-shadow: 0.0em 0.0em 0.7em #008a02;
   border-radius: 50%;
   display: block;
   margin-left: auto;
@@ -54,4 +54,35 @@
 
 .sombraSGA {
   text-shadow: rgb(51, 47, 47) 0.1em 0.1em 0.2em;
+}
+
+.shadow-form {
+  box-shadow: 0px 0px 6px #848484;
+}
+.shadow-form {
+  -webkit-border-radius: 30px 30px 30px 30px;
+  border-radius: 30px 30px 30px 30px;
+  background: #fff;
+  padding: 10px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+}
+#body-registro {
+  background-image: url("../img/edificioG.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#body-registro:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.sombraR{        
+  text-shadow: #008a02 0.1em 0.1em 0.4em;
 }

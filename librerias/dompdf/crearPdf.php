@@ -35,11 +35,11 @@ $idProyecto = $_GET['id'];
             </tr>
         </thead>
     </table>    
-    <table class="table table-sm" style="border-collapse: collapse;">
-        <tbody style="padding: 5px;">
+    <table class="table-sm" style="border-collapse: collapse;" width="100%">
+        <tbody >
             <tr>
                 <td colspan="4">
-                    <p style="text-align: center; font-size: 16px; font-weight: bold;">Datos del Residente</p>
+                    <p style="text-align: center; font-size: 15px; font-weight: bold;">Datos del Residente</p>
                 </td>
             </tr>
             <tr>
@@ -98,7 +98,7 @@ $idProyecto = $_GET['id'];
             </tr>
             <tr>
                 <td colspan="4">
-                    <p style="text-align: center; font-size: 16px; font-weight: bold;">Datos del Proyecto</p>
+                    <p style="text-align: center; font-size: 15px; font-weight: bold;">Datos del Proyecto</p>
                 </td>
             </tr>
             <tr>
@@ -151,7 +151,7 @@ $idProyecto = $_GET['id'];
             </tr>
             <tr>
                 <td colspan="4">
-                    <p style="text-align: center; font-size: 16px; font-weight: bold;">
+                    <p style="text-align: center; font-size: 15px; font-weight: bold;">
                         Datos de la Empresa o Institución
                     </p>
                 </td>
@@ -180,7 +180,7 @@ $idProyecto = $_GET['id'];
                     </p>
                 </td>
                 <td>
-                    <p style="font-size: 13px; text-align: justify;">
+                    <p style="font-size: 13px; text-align: right;">
                         <b>Teléfono:</b>&nbsp;
                         <u> <?php echo $mostrar['telefono'] ?> </u>
                     </p>
