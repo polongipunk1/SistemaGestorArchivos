@@ -30,6 +30,44 @@ function obtenerDatosProyecto(idProyecto) {
   });
 }
 
+function eliminarProyecto(idProyecto) {
+  idProyecto = parseInt(idProyecto);
+  if (idProyecto < 1) {
+    swal("No existe un ID de Proyecto");
+    return false;
+  } else {
+    swal({
+      title: "¿Esta seguro de eliminar este proyecto?",
+      text: "Una vez eliminado no podrá recuperarse.",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        $.ajax({
+          type: "POST",
+          data: "idProyecto=" + idProyecto,
+          url: "../procesos/proyectos/eliminaProyecto.php",
+          success: function (respuesta) {              
+            respuesta = respuesta.trim();
+
+            if (respuesta == 1) {
+              $("#tablaProyectos").load("proyectos/tablaProyectos.php");
+              swal("Proyecto eliminado con éxito", {
+                icon: "success",
+              });
+            } else {
+              swal("Error al eliminar proyecto", {
+                icon: "error",
+              });
+            }
+          },
+        });
+      }
+    });
+  }
+}
+
 /*function actualizaProyecto(){
     $.ajax({
         type:"POST",

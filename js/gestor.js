@@ -24,9 +24,9 @@ function agregarArchivosGestor() {
           "success"
         );
       } else if (formData.get("categoriasArchivos") == null) {
-        swal("no hay categoria");
+        swal("No hay categoría seleccionada","","warning");
       } else if (formData.get("archivos[]").size > 41943040) {
-        swal("Tamaño de archivo demasiado grande");
+        swal("Tamaño de archivo demasiado grande","","error");
       } else {
         swal(
           "Error al agregar archivo",

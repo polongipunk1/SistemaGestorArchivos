@@ -127,6 +127,17 @@ require_once "Conexion.php";
         $query->close();
         return $respuesta;
     }
+
+    public function eliminarProyecto($idProyecto){
+        $conexion = Conectar::conexion();
+        
+        $sql = "DELETE FROM t_proyectos WHERE id_proyecto = ?";
+        $query = $conexion->prepare($sql);
+        $query->bind_param('i', $idProyecto);
+        $respuesta = $query->execute();
+        $query->close();
+        return $respuesta;
+    }
  }
 
 ?>

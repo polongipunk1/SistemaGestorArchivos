@@ -20,8 +20,7 @@
                     INNER JOIN
                 t_usuarios AS usuario ON proyectos.id_usuario = usuario.id_usuario
                     INNER JOIN
-                t_categorias AS categorias ON proyectos.id_categoria = categorias.id_categoria
-                and proyectos.id_usuario = '$idUsuario'";
+                t_categorias AS categorias ON proyectos.id_categoria = categorias.id_categoria";
 
     $result = mysqli_query($conexion, $sql);
 
@@ -39,9 +38,7 @@
                         <th>Categoría</th>
                         <th>Nombre del proyecto</th>
                         <th>Asesor Externo</th>
-                        <th>Editar</th>
-                        <th>PDF</th>
-                        <th>Eliminar</th>
+                        <th>Detalle</th>                                                
                     </tr>
                 </thead>
                 <tbody>
@@ -58,24 +55,12 @@
                         <td> <?php echo $mostrar['nombreProyecto'] ?> </td>
                         <td> <?php echo $mostrar['nombreResponsable'] ?> </td>
                         <td>
-                            <span class="btn btn-outline-warning btn-sm"
+                            <span class="btn btn-info btn-sm"
                                 onclick="obtenerDatosProyecto('<?php echo $idProyecto ?>')" data-toggle="modal"
-                                data-target="#modalActualizarProyecto">
-                                <span class="fas fa-edit"></span>
+                                data-target="#modalDetalleProyecto">
+                                <span class="fas fa-eye"></span>
                             </span>
-                        </td>
-                        <td>
-                            <span class="btn btn-danger btn-sm">
-                                <a href="../librerias/dompdf/crearPdf.php?id=<?php echo $idProyecto ?>"><span
-                                        class="icono far fa-file-pdf text-white"
-                                        style="font-size: 20px; text-decoration: none;"></span></a>
-                            </span>
-                        </td>
-                        <td>
-                            <span class="btn btn-danger btn-sm" onclick="eliminarProyecto('<?php echo $idProyecto ?>')">
-                                <span class="fas fa-trash-alt"></span>
-                            </span>
-                        </td>
+                        </td>                                                
                     </tr>
 
                     <?php

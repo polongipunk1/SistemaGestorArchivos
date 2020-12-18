@@ -2,7 +2,7 @@
 function agregarCategoria() {
   var categoria = $("#nombreCategoria").val();
   if (categoria == "") {
-    swal("Debes agregar una categoría");
+    swal("Debes agregar una categoría","","warning");
     return false;
   } else {
     $.ajax({
