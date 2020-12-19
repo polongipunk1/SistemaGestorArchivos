@@ -36,6 +36,9 @@
                     <li class="fas fa-sign-in-alt"></li> Entrar
                 </button>
             </form>
+            <a href="recuperarPassword.php" class="text-warning mb-2" style="font-size: 20px; font-weight: bold;">
+                <li class="far fa-question-circle"></li> Recuperar contraseña
+            </a>
         </div>
     </div>
 

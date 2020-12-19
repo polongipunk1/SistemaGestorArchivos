@@ -67,5 +67,35 @@ require_once "Conexion.php";
 			return 0;
 		}
 	 }
+
+	 //Metodo para buscar correo
+	 public function bucarCorreo($email){
+		$conexion = Conectar::conexion();
+
+		$sql = "SELECT email FROM t_usuarios WHERE email = '$email'";
+		$result = mysqli_query($conexion, $sql);
+
+		$datos = mysqli_fetch_array($result);
+
+		if($datos['email'] != "" || $datos['email'] == $email){
+			return 1;
+		}else{
+			return 0;
+		}
+	 }
+
+	 public function actualizaPassword($datos) {
+		$conexion = Conectar::conexion();
+
+		$sql = "UPDATE t_usuarios SET password = ? WHERE email = ?";
+            $query = $conexion->prepare($sql);
+            $query->bind_param("ss", $datos['password'],
+                                     $datos['email']);
+            $respuesta = $query->execute();
+            $query->close();
+            
+            return $respuesta;
+		
+	}
  }
 ?>
