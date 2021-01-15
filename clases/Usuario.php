@@ -9,6 +9,8 @@ require_once "Conexion.php";
 
 		 if(self::buscarUsuarioRepetido($datos['usuario'])){
 			 return 2;
+		 }else if(self::bucarCorreo($datos['email'])){
+			 return 3;
 		 }else{
 			$sql = "INSERT INTO t_usuarios (nombre, apellidos, carrera, email, no_empleado, telefono, usuario, password)
 			VALUES (?,?,?,?,?,?,?,?)";

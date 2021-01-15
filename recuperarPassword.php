@@ -30,13 +30,17 @@
                                 placeholder="Ingrese una nueva contraseña">
                         </div>
                     </div>
-                    <a href="index.php" class="btn btn-outline-primary mt-2 mb-2">
+                    <a href="index.php" class="btn btn-outline-primary mt-2 mb-2" id="btnEntrar">
                         <span class="fas fa-sign-in-alt mr-2"></span>Entrar
                     </a>
                     <button type="submit" class="btn btn-success" id="btnValidar">Validar</button>
-                    <button type="submit" class="btn btn-warning" id="btnActualizar"
-                        onclick="actualizarPassword()">Actualizar</button>
                 </form>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-warning mb-3" id="btnActualizar"
+                            onclick="actualizarPassword()">Actualizar</button>
+                    </div>
+                </div>
                 <h6 class="text-center alert-danger mt-2"><b>NOTA:&nbsp;</b>Debe ingresar el correo con el cual se
                     registro previamente en el
                     sistema.</h6>
@@ -61,12 +65,12 @@
             data: $('#frmRecuperarPassword').serialize(),
             url: "procesos/usuario/login/recuperarPass.php",
             success: function(respuesta) {
-                console.log(respuesta);
-                respuesta = respuesta.trim();
-
+                //console.log(respuesta);
+                //respuesta = respuesta.trim();
                 if (respuesta == 1) {
                     //$("#frmRecuperarPassword")[0].reset();                    
                     swal("Correo válido", "Asigne una nueva contraseña", "success");
+                    $("#btnEntrar").hide();
                     $("#email").prop('readonly', true);
                     $("#lblpassword").show();
                     $("#password").show();
@@ -82,29 +86,39 @@
     }
 
     function actualizarPassword() {
-        //email = $("#email").val();
-        //password = $("#password").val();
+        email = $("#email").val();
+        password = $("#password").val();
         //console.log(email);
         //console.log(password);
         if (password == "") {
-            swal("Ingrese una contraseña", "", "warning");
+            swal({
+                icon: "warning",
+                title: "Ingrese una contraseña",
+                text: "",
+                closeModal: false
+            }).then(function() {
+                swal.close();
+                $('#password').focus();
+            });
         } else {
             $.ajax({
                 method: "POST",
                 data: "email=" + email + "&password=" + password,
                 url: "procesos/usuario/login/actualizarPass.php",
                 success: function(respuesta) {
-                    console.log(respuesta);
-                    respuesta = respuesta.trim();
+                    //console.log(respuesta);
+                    //respuesta = respuesta.trim();
 
                     if (respuesta == 1) {
-                        $("#frmRecuperarPassword")[0].reset();
-                        swal("Contraseña actualizada correctamente", "", "success");
-                        $("#lblpassword").hide();
-                        $("#password").hide();
-                        $("#btnActualizar").hide();
-                        $("#email").prop('readonly', false);
-                        $("#btnValidar").show();
+                        swal({
+                            icon: "success",
+                            title: "Contraseña actualizada correctamente",
+                            text: "",
+                            closeModal: false
+                        }).then(function() {
+                            swal.close();
+                            window.location = "index.php";
+                        });
                     } else {
                         swal("Error al actualizar contraseña", "", "error");
                     }

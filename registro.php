@@ -93,12 +93,31 @@
             url: "procesos/usuario/registro/agregarUsuario.php",
             success: function(respuesta) {
                 respuesta = respuesta.trim();
-
+                console.log(respuesta);
                 if (respuesta == 1) {
                     $("#frmRegistro")[0].reset();
                     swal("Registro exitoso!!", "Ha sido registrado con éxito", "success");
                 } else if (respuesta == 2) {
-                    swal("Este usuario ya existe, por favor ingrese otro")
+                    //swal("Este usuario ya existe, por favor ingrese otro", "", "warning");
+                    swal({
+                        icon: "warning",
+                        title: "Este usuario ya existe, por favor ingrese otro",
+                        text: "",
+                        closeModal: false
+                    }).then(function() {
+                        swal.close();
+                        $('#usuario').focus();
+                    });
+                } else if (respuesta == 3) {
+                    swal({
+                        icon: "warning",
+                        title: "Este correo ya existe, por favor ingrese otro",
+                        text: "",
+                        closeModal: false
+                    }).then(function() {
+                        swal.close();
+                        $('#email').focus();
+                    });
                 } else {
                     swal("Registro fallido", "Verifique los campos", "error");
                 }
