@@ -9,7 +9,7 @@
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1 class="display-4">Gestor de Archivos</h1>
+        <h1 class="display-4">Gestor de archivos</h1>
         <!-- Button trigger modal AGREGAR ARCHIVOS -->
         <span class="btn btn-success" data-toggle="modal" data-target="#modalAgregarArchivos">
             <span class="fas fa-plus-circle mr-2"></span>Agregar archivos

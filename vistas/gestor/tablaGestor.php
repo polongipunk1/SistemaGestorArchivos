@@ -29,7 +29,7 @@
             <tr>
               <th>Categoría</th>
               <th>Nombre</th>
-              <th>Extensión de archivo</th>
+              <th>Extensión del archivo</th>
               <th>Descargar</th>
               <th>Visualizar</th>
               <th>Eliminar</th>
