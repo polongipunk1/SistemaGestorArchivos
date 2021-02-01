@@ -38,6 +38,7 @@
                     <label for="">Selecciona archivos:</label>
                     <input type="file" name="archivos[]" id="archivos[]" class="form-control" multiple="">
                 </form>
+                <p class="alert-danger"><b>Nota:&nbsp;</b>tamaño máximo soportado 480 MB.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

@@ -13,6 +13,7 @@ function agregarArchivosGestor() {
     processData: false,
     success: function (respuesta) {
       //console.log(respuesta);
+      //console.log(formData.get("archivos[]").size);
       respuesta = respuesta.trim();
 
       if (respuesta == 1) {
@@ -25,7 +26,7 @@ function agregarArchivosGestor() {
         );
       } else if (formData.get("categoriasArchivos") == null) {
         swal("No hay categoría seleccionada","","warning");
-      } else if (formData.get("archivos[]").size > 41943040) {
+      } else if (formData.get("archivos[]").size > 505561499) {        
         swal("Tamaño de archivo demasiado grande","","error");
       } else {
         swal(

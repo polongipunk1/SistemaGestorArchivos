@@ -62,7 +62,7 @@
                 type="application/pdf" width="100%" height="600px" />';
             }else if($extension == 'mp3' || $extension == 'MP3' || $extension == 'm4a'){
                 return '<audio controls src="'.$ruta.'" width="100%">';
-            }else if($extension == 'mp4' || $extension == 'MP4' || $extension == 'mkv'){
+            }else if($extension == 'mp4' || $extension == 'MP4' || $extension == 'mkv' || $extension == 'MKV'){
                 return '<video src="'.$ruta.'" controls width="100%"></video>';                
             }
         }
