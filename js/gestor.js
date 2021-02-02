@@ -12,7 +12,7 @@ function agregarArchivosGestor() {
     contentType: false,
     processData: false,
     success: function (respuesta) {
-      console.log(respuesta);
+      //console.log(respuesta);
       //console.log(formData.get("archivos[]").size);
       respuesta = respuesta.trim();
 
