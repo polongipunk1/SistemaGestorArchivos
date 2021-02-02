@@ -12,7 +12,7 @@ function agregarArchivosGestor() {
     contentType: false,
     processData: false,
     success: function (respuesta) {
-      //console.log(respuesta);
+      console.log(respuesta);
       //console.log(formData.get("archivos[]").size);
       respuesta = respuesta.trim();
 
@@ -24,6 +24,8 @@ function agregarArchivosGestor() {
           "El archivo se ha subido satisfactoriamente",
           "success"
         );
+      }else if(respuesta == 2){
+        swal("Este archivo ya existe, por favor renómbrelo","","warning");
       } else if (formData.get("categoriasArchivos") == null) {
         swal("No hay categoría seleccionada","","warning");
       } else if (formData.get("archivos[]").size > 505561499) {        
@@ -57,11 +59,11 @@ function eliminarArchivo(idArchivo) {
 
           if (respuesta == 1) {
             $("#tablaGestorArchivos").load("gestor/tablaGestor.php");
-            swal("Eliminado con éxito", {
+            swal("Eliminado con éxito","", {
               icon: "success",
             });
           } else {
-            swal("Error al eliminar", {
+            swal("Error al eliminar","", {
               icon: "error",
             });
           }

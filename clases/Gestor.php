@@ -5,6 +5,11 @@
     class Gestor extends Conectar{
         public function agregaRegistroArchivo($datos){
             $conexion = Conectar::conexion();
+
+            if(self::buscarArchivoRepetido($datos['nombreArchivo'])){
+                return 2;
+            }else{
+            //$conexion = Conectar::conexion();
             $sql = "INSERT INTO t_archivos (id_usuario,id_categoria,nombre,tipo,ruta) VALUES (?,?,?,?,?)";
             $query = $conexion->prepare($sql);
             $query->bind_param("iisss", $datos['idUsuario'],
@@ -16,6 +21,7 @@
             $query->close();
 
             return $respuesta;
+        }
         }
 
         public function obtenNombreArchivo($idArchivo){
@@ -66,6 +72,22 @@
                 return '<video src="'.$ruta.'" controls width="100%"></video>';                
             }
         }
+
+        //Metodo para Validar si el nombre del archivo ya existe
+	    public function buscarArchivoRepetido($nombreArchivo){
+		$conexion = Conectar::conexion();
+
+		$sql = "SELECT nombre FROM t_archivos WHERE nombre = '$nombreArchivo'";
+		$result = mysqli_query($conexion, $sql);
+
+		$datos = mysqli_fetch_array($result);
+
+		if($datos['nombre'] != "" || $datos['nombre'] == $nombreArchivo){
+			return 1;
+		}else{
+			return 0;
+		}
+	 }
     }
 
 ?>
